@@ -34,7 +34,7 @@
       "dotnetRunMessages": true,
       "applicationUrl": "https://161.67.133.210:8055;http://161.67.133.210:5037"
     },
-    "IIS Express": 
+    "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",

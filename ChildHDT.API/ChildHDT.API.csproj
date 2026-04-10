@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.30">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.30" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
@@ -29,11 +33,4 @@
   <ItemGroup>
     <ProjectReference Include="..\ChildHDT.Infrastructure\ChildHDT.Infrastructure.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="C:\Users\LoUISE_PC1\source\repos\UCLM-LoUISE\PRJ2019-2gether-Julian\InChild.Infrastructure\appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

@@ -31,12 +31,13 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             var mqttPassword = _configuration["MQTT:Password"];
 
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("ChildClient")
+                .WithClientId($"ChildClient-{id}-{topic}")
                 .WithTcpServer(mqttServer, mqttPort)
                 .WithCredentials(mqttUserName, mqttPassword)
                 .WithCleanSession()
                 .Build();
-
+           
+            
             Start(options).Wait();
         }
 
@@ -51,12 +52,12 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             var mqttPassword = _configuration["MQTT:Password"];
 
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("ChildClient")
+                .WithClientId($"ChildClient-{id}-{topic}")
                 .WithTcpServer(mqttServer, mqttPort)
                 .WithCredentials(mqttUserName, mqttPassword)
                 .WithCleanSession()
                 .Build();
-
+           
             Start(options).Wait();
         }
 
@@ -71,7 +72,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
                 ReceiveEvent(eventData);
                 return Task.CompletedTask;
             };
-
+            
             await _client.ConnectAsync(options);
             await _client.SubscribeAsync(_topic);
 
@@ -85,10 +86,12 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             }
 
             Events.Add(eventData);
+            Console.WriteLine($"EVENTO RECIBIDO en instancia {GetHashCode()}");
         }
 
         public List<T> GetEvents()
         {
+            
             return Events;
         }
 

@@ -18,6 +18,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
 
         public override StressEvent GetLastEvent()
         {
+            Console.WriteLine($"LEYENDO instancia {GetHashCode()} con {Events.Count} eventos");
             if (Events.Count == 0) return new StressEvent(new Stress(0, "Controlled"), DateTime.Now);
             return Events[Events.Count - 1];
         }

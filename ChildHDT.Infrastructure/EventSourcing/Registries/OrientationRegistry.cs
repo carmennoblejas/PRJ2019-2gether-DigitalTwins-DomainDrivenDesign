@@ -17,6 +17,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
 
         public override OrientationEvent GetLastEvent()
         {
+            Console.WriteLine($"LEYENDO instancia {GetHashCode()} con {Events.Count} eventos");
             if (Events.Count == 0) return new OrientationEvent(new Orientation(0), DateTime.Now);
             return Events[Events.Count - 1];
         }

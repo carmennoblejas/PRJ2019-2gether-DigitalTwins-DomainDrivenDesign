@@ -69,6 +69,7 @@ namespace ChildHDT.Infrastructure.InfrastructureServices
                 else
                 {
                     data.Features = new PWAFeatures(data.Id, _configuration);
+                    _featuresCache[data.Id] = data.Features;
                 }
                 return data;
             }
@@ -129,6 +130,7 @@ namespace ChildHDT.Infrastructure.InfrastructureServices
                     else
                     {
                         child.Features = new PWAFeatures(child.Id, _configuration);
+                        _featuresCache[child.Id] = child.Features;
                     }
                 }
                 return childrenList;
