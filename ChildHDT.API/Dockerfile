@@ -21,4 +21,4 @@ RUN dotnet publish "ChildHDT.API.csproj" -c Release -o /app/publish /p:UseAppHos
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ChildHDT.API.dll"
+ENTRYPOINT ["dotnet", "ChildHDT.API.dll"]
