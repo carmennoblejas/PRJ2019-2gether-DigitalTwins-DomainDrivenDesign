@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   postgres:
-    image: postgres
+    image: postgres:11
     restart: always
     environment:
       - DATABASE_HOST=127.0.0.1
@@ -46,7 +46,7 @@ services:
       - "1883:1883"
   
   api-flask:
-    image: api-flask
+    image: api-flask:v2
     restart: always
     ports:
       - "8081:5000"
