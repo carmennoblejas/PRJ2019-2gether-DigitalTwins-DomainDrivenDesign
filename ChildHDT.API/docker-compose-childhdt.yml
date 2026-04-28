@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   childhdt:
-    image: carmennoblejass/childhdt:v2
+    image: carmennoblejass/childhdt:v4
     container_name: childhdt
     ports:
       - "8082:80"
