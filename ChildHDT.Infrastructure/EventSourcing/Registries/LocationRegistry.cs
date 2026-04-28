@@ -17,7 +17,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
 
         public override LocationEvent GetLastEvent()
         {
-            Console.WriteLine($"LEYENDO instancia {GetHashCode()} con {Events.Count} eventos");
+            //Console.WriteLine($"LEYENDO instancia {GetHashCode()} con {Events.Count} eventos");
             if (Events.Count == 0) return new LocationEvent(new Location(0,0),DateTime.Now);
             return Events[Events.Count - 1];
         }
