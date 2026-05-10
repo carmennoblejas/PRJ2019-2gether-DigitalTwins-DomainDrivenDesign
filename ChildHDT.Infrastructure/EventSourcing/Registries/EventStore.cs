@@ -86,7 +86,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             }
 
             Events.Add(eventData);
-            Console.WriteLine($"EVENTO RECIBIDO en instancia {GetHashCode()}");
+            //Console.WriteLine($"EVENTO RECIBIDO en instancia {GetHashCode()}");
         }
 
         public List<T> GetEvents()

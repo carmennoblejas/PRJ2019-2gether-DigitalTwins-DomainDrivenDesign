@@ -46,7 +46,7 @@ services:
       - "1883:1883"
   
   api-flask:
-    image: api-flask
+    image: carmennoblejass/api-flask:v2
     restart: always
     ports:
       - "8081:5000"

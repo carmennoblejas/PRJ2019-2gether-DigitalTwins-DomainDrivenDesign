@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  childhdt:
+    image: carmennoblejass/childhdt:v4
+    container_name: childhdt
+    ports:
+      - "8082:80"
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ASPNETCORE_ENVIRONMENT: Development
+      RabbitMQ__HostName: rabbitmq
+      MQTT__Server: emqx
+      MQTT__Port: 1883
+      MQTT__UserName: admin
+      MQTT__Password: public
+      API__URL: http://api-flask:5000/stresslevel
+      ConnectionStrings__PostgreSQL: Host=postgres;Port=5432;Database=mydatabase;Username=myuser;Password=mypassword
+    networks:
+      - childhdt_network
+
+networks:
+  childhdt_network:
+    external: true
+    name: childhdtapi_default

@@ -31,7 +31,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             var mqttPassword = _configuration["MQTT:Password"];
 
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("ChildClient")
+                .WithClientId($"ChildClient-{id}-{topic}")
                 .WithTcpServer(mqttServer, mqttPort)
                 .WithCredentials(mqttUserName, mqttPassword)
                 .WithCleanSession()
@@ -51,7 +51,7 @@ namespace ChildHDT.Infrastructure.EventSourcing.Registries
             var mqttPassword = _configuration["MQTT:Password"];
 
             var options = new MqttClientOptionsBuilder()
-                .WithClientId("ChildClient")
+                .WithClientId($"ChildClient-{id}-{topic}")
                 .WithTcpServer(mqttServer, mqttPort)
                 .WithCredentials(mqttUserName, mqttPassword)
                 .WithCleanSession()

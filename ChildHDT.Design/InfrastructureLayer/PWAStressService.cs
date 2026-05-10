@@ -87,7 +87,8 @@ namespace ChildHDT.Infrastructure.IntegrationServices
             if (value > 0.6)
             {
                 level = "High";
-                child.StressLevelShotUp(notificationHandler);
+                SendStressNotification().Wait();
+                //child.StressLevelShotUp(notificationHandler);
                 //ALMACEN
             } else
             {
@@ -120,6 +121,15 @@ namespace ChildHDT.Infrastructure.IntegrationServices
             }
 
             return closestBully;
+        }
+
+        private async Task SendStressNotification()
+        {
+            var children = await rc.GetAll();
+            foreach (var child in children)
+            {
+                child.StressLevelShotUp(notificationHandler);
+            }
         }
     }
 }

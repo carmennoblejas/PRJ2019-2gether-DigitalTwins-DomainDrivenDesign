@@ -32,6 +32,13 @@ builder.Services.AddHostedService<StressMonitoringService>();
 
 var app = builder.Build();
 
+// Añadir esto ANTES de cualquier middleware:
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ChildContext>();
+    db.Database.Migrate();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
