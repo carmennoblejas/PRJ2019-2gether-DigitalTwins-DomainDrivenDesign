@@ -36,14 +36,14 @@ namespace ChildHDT.UIT.Testing
         {
             var inMemorySettings = new Dictionary<string, string>
             {
-                {"ASPNETCORE_ENVIRONMENT", "Production"},
-                {"ConnectionStrings:PostgreSQL", "Host=161.67.133.210;Database=mydatabase;Username=myuser;Password=mypassword"},
-                {"RabbitMQ:HostName", "161.67.133.210"},
-                {"MQTT:Server", "161.67.133.210"},
+                {"ASPNETCORE_ENVIRONMENT", "Development"},
+                {"ConnectionStrings:PostgreSQL", "Host=localhost;Database=mydatabase;Username=myuser;Password=mypassword"},
+                {"RabbitMQ:HostName", "localhost"},
+                {"MQTT:Server", "localhost"},
                 {"MQTT:Port", "1883"},
                 {"MQTT:UserName", "admin"},
                 {"MQTT:Password", "public"},
-                {"API:URL", "http://161.67.133.210:8081/stresslevel"}
+                {"API:URL", "http://localhost:8081/stresslevel"}
             };
 
             var configurationBuilder = new ConfigurationBuilder()
